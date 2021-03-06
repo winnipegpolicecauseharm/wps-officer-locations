@@ -1,0 +1,8 @@
+{
+  "name": "wps-officer-locations",
+  "version": "1.0.0",
+  "description": "Filter and combine FSA GeoJSON with WPS officer counts by FSA",
+  "main": "index.js",
+  "author": "Buck Doyle",
+  "license": "MIT"
+}
