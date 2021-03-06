@@ -9,4 +9,8 @@ const allFsas = JSON.parse(fs.readFileSync('Canadian_FSA.geojson'));
 allFsas.features = allFsas.features.filter(feature => populatedFsas.includes(feature.properties.CFSAUID));
 allFsas.features.forEach(feature => feature.properties.wpses = fsaToCount[feature.properties.CFSAUID]);
 
-fs.writeFileSync('FSA-WPS.geojson', JSON.stringify(allFsas));
+const json = JSON.stringify(allFsas);
+
+fs.writeFileSync('FSA-WPS.geojson', json);
+
+fs.writeFileSync('FSA-WPS.js', `window.WPS_FSAS = ${json};`);
